@@ -1,10 +1,9 @@
-#pragma once
-
-#include "morse_code.h"
 #include <stack>
 
+#include "morse_code.h"
+
 /* Input is a character; converts it to its morse code equivalent as a string. Example: CharToMorse('G') -> "--." */
-inline std::string Morse_Code::CharToMorse(char c) {
+std::string Morse_Code::CharToMorse(char c) {
 	/* Convert the character to lowercase. If the character is not a letter, exit the function.	*/
 	c = tolower(c);
 	if (c > 123 || c < 96)
@@ -49,7 +48,7 @@ inline std::string Morse_Code::CharToMorse(char c) {
 }
 
 /* Input is morse code for a single character; converts it to its alphabetical character equivalent as a char. Example: MorseToChar("--.") -> 'G' */
-inline char Morse_Code::MorseToChar(const std::string str) {
+char Morse_Code::MorseToChar(const std::string str) {
 	int pos = 0;
 
 	for (int i = 0; i < str.length(); i++) {
@@ -71,7 +70,7 @@ inline char Morse_Code::MorseToChar(const std::string str) {
 }
 
 /* Input is a alphabetical string of characters; converts all character to their morse code equivalents. */
-inline std::string Morse_Code::StringToMorse(std::string str) {
+std::string Morse_Code::StringToMorse(std::string str) {
 	std::string MorseConversion;
 
 	/* For each character in the input string, pass it into the CharToMorse method. Store the result in a string with a space to represent a delimeter. */
@@ -86,7 +85,7 @@ inline std::string Morse_Code::StringToMorse(std::string str) {
 
 /* Input is multiple characters in morse code each separated by spaces; converts all code to their alphabetical equivalent. A single space separates characters,
 and a double space separates words. */
-inline std::string Morse_Code::MorseToString(std::string str) {
+std::string Morse_Code::MorseToString(std::string str) {
 	std::string LetterConversion;
 	std::string character;
 

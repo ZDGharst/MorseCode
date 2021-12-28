@@ -1,5 +1,6 @@
 #include <iostream>
-#include "morse_code.cpp"
+
+#include "morse_code.h"
 
 int main() {
 	Morse_Code morseTest;
@@ -9,6 +10,5 @@ int main() {
 	std::cout << AllYourBase << "\n\n";
 	std::cout << AreBelongToUs << "\n\n";
 
-	getchar();
 	return 0;
 }
